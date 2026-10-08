@@ -962,6 +962,50 @@ svg .hide { opacity: 0; }
 #sec i.past { background: var(--text-3); opacity: 0.8; }
 #sec i.on { width: 20px; background: var(--red); opacity: 1; }
 
+/* University logo */
+.logo-dark { display: block; }
+.logo-light { display: none !important; }
+:root[data-theme="light"] .logo-dark { display: none !important; }
+:root[data-theme="light"] .logo-light { display: block !important; }
+#brand {
+  position: absolute;
+  top: 68px;
+  right: 112px;
+  height: 52px;
+  z-index: 40;
+  pointer-events: none;
+  opacity: 0.92;
+  transition: opacity 0.9s var(--ease);
+}
+#brand img { height: 100%; width: auto; }
+#stage.hero-on #brand { opacity: 0; }
+.s-title .hero-logo {
+  position: absolute;
+  left: 112px;
+  top: 76px;
+  height: 92px;
+  z-index: 5;
+}
+.s-title .hero-logo img { height: 100%; width: auto; }
+
+/* Clickable shortcut hints on the title slide */
+.s-title .hint { gap: 12px; }
+.hint-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 560;
+  color: var(--text-2);
+  padding: 8px 16px 8px 8px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  transition: background 0.3s, color 0.3s, transform 0.3s var(--ease);
+}
+.hint-btn:hover { background: var(--surface-3); color: var(--text); transform: translateY(-1px); }
+.hint-btn kbd { margin: 0; }
+
 /* Utility for "illustrative" stamp */
 .illus {
   font-size: 16px;

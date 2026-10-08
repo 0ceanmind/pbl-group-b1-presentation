@@ -124,6 +124,7 @@ export function startDeck() {
     to.classList.remove('is-past');
     if (opts.instant) { to.classList.add('instant'); requestAnimationFrame(() => requestAnimationFrame(() => to.classList.remove('instant'))); }
     to.classList.add('is-active');
+    stage.classList.toggle('hero-on', to.classList.contains('s-title'));
 
     state.i = i;
     state.step = step;
@@ -197,12 +198,33 @@ export function startDeck() {
   }
   try { const t = localStorage.getItem('b1-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) { /* ignore */ }
 
+  let flashTimer = 0;
+  function flash(msg) {
+    jumpEl.textContent = msg;
+    jumpEl.classList.add('on');
+    clearTimeout(flashTimer);
+    flashTimer = setTimeout(() => jumpEl.classList.remove('on'), 2600);
+  }
+
   function fullscreen() {
-    if (!document.fullscreenElement) document.documentElement.requestFullscreen?.().catch(() => {});
-    else document.exitFullscreen?.();
+    const d = document, el = d.documentElement;
+    const active = d.fullscreenElement || d.webkitFullscreenElement;
+    if (active) {
+      (d.exitFullscreen || d.webkitExitFullscreen || (() => {})).call(d);
+      return;
+    }
+    const req = el.requestFullscreen || el.webkitRequestFullscreen;
+    const blocked = () => flash('Full screen is blocked here — press F11');
+    if (!req || d.fullscreenEnabled === false) { blocked(); return; }
+    try {
+      const p = req.call(el);
+      if (p && p.catch) p.catch(blocked);
+    } catch (err) { blocked(); }
   }
 
   // ---- input -------------------------------------------------------------
+  // Shortcuts use the physical key (e.code), so they work on any keyboard
+  // layout — e.g. with an Arabic layout active, F still means full screen.
   let jumpBuf = '';
   let jumpTimer = 0;
   window.addEventListener('keydown', (e) => {
@@ -210,17 +232,23 @@ export function startDeck() {
     if (t && (t.tagName === 'TEXTAREA' || (t.tagName === 'INPUT' && t.type === 'text'))) return;
     if (e.metaKey || e.ctrlKey || e.altKey) return;
     const k = e.key;
+    const c = e.code || '';
+    const letter = c.startsWith('Key') ? c.slice(3).toLowerCase() : (k && k.length === 1 ? k.toLowerCase() : '');
+    const dm = /^(?:Digit|Numpad)([0-9])$/.exec(c);
+    const digit = dm ? dm[1] : (/^[0-9]$/.test(k) ? k : null);
+    const isHelp = k === '?' || k === '؟' || (c === 'Slash' && e.shiftKey);
     if (overview.classList.contains('on') || help.classList.contains('on')) {
-      if (k === 'Escape' || k === 'o' || k === 'O' || k === '?' || k === 'h' || k === 'H') { toggle(overview, false); toggle(help, false); e.preventDefault(); }
+      if (k === 'Escape' || letter === 'o' || letter === 'h' || isHelp) { toggle(overview, false); toggle(help, false); e.preventDefault(); }
       return;
     }
     // on the objectives hub, 1–6 open that objective directly
-    if (slides[state.i].id === 'hub' && /^[1-6]$/.test(k) && !jumpBuf) {
+    if (slides[state.i].id === 'hub' && digit && /^[1-6]$/.test(digit) && !jumpBuf) {
       e.preventDefault();
-      goId(`slo${k}`);
+      goId(`slo${digit}`);
       return;
     }
-    if (/^[0-9]$/.test(k)) {
+    if (digit !== null) {
+      const k = digit;
       jumpBuf += k;
       jumpEl.textContent = `Go to slide ${jumpBuf}`;
       jumpEl.classList.add('on');
@@ -236,24 +264,32 @@ export function startDeck() {
       e.preventDefault();
       return;
     }
-    if (NEXT.has(k)) { e.preventDefault(); if (t && t.blur && t !== document.body) t.blur(); next(); }
-    else if (PREV.has(k)) { e.preventDefault(); if (t && t.blur && t !== document.body) t.blur(); prev(); }
+    if (NEXT.has(k) || c === 'Space' || letter === 'n') { e.preventDefault(); if (t && t.blur && t !== document.body) t.blur(); next(); }
+    else if (PREV.has(k) || letter === 'p') { e.preventDefault(); if (t && t.blur && t !== document.body) t.blur(); prev(); }
     else if (k === 'Home') { e.preventDefault(); go(0, 0); }
     else if (k === 'End') { e.preventDefault(); go(slides.length - 1, 0); }
-    else if (k === 'f' || k === 'F') fullscreen();
-    else if (k === 'o' || k === 'O' || k === 'Escape') toggle(overview);
-    else if (k === 't' || k === 'T') toggleTheme();
-    else if (k === 'b' || k === 'B' || k === '.') toggle(blackout);
-    else if (k === 'h' || k === 'H') { e.preventDefault(); goId('hub'); }
-    else if (k === '?') toggle(help);
+    else if (letter === 'f') { e.preventDefault(); fullscreen(); }
+    else if (letter === 'h') { e.preventDefault(); goId('hub'); }
+    else if (letter === 'o' || k === 'Escape') toggle(overview);
+    else if (letter === 't') toggleTheme();
+    else if (letter === 'b' || c === 'Period') toggle(blackout);
+    else if (isHelp) toggle(help);
   }, true);
 
   document.getElementById('nav-prev').addEventListener('click', prev);
   document.getElementById('nav-next').addEventListener('click', next);
   document.getElementById('nav-grid').addEventListener('click', () => toggle(overview));
   document.getElementById('nav-hub').addEventListener('click', () => goId('hub'));
-  // any element with data-go="<slide id>" jumps there
+  // any element with data-go="<slide id>" jumps there; data-act runs a command
   stage.addEventListener('click', (e) => {
+    const a = e.target.closest('[data-act]');
+    if (a) {
+      e.stopPropagation();
+      if (a.dataset.act === 'full') fullscreen();
+      else if (a.dataset.act === 'next') next();
+      else if (a.dataset.act === 'help') toggle(help, true);
+      return;
+    }
     const b = e.target.closest('[data-go]');
     if (!b) return;
     e.stopPropagation();
