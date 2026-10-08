@@ -181,11 +181,11 @@ export default function heme(slide, api) {
   const pathHost = slide.querySelector('[data-path]');
   pathHost.innerHTML = `
     <div class="steps-list compact">
-      <div class="it" data-hs="0" style="--c:var(--teal)"><span class="sw"></span><div><h4>Glycine + succinyl-CoA → ALA</h4><p>ALA synthase, with vitamin B6 as cofactor.</p></div></div>
-      <div class="it" data-hs="1" style="--c:var(--blue)"><span class="sw"></span><div><h4>Several steps → protoporphyrin IX</h4><p>The ring that will hold the iron.</p></div></div>
-      <div class="it" data-hs="2" style="--c:var(--iron)"><span class="sw"></span><div><h4>Ferrochelatase inserts Fe²⁺ → heme</h4><p>The final step — impossible without iron.</p></div></div>
-      <div class="it" data-hs="3" style="--c:var(--red)"><span class="sw"></span><div><h4>Heme + globin chains → hemoglobin</h4><p>Hemoglobin fills the developing red cell.</p></div></div>
-      <div class="it" data-hs="4" style="--c:var(--blue)"><span class="sw"></span><div><h4>Iron deficiency</h4><p>↓ Fe²⁺ → ↓ heme → ↓ hemoglobin → smaller, paler cells: <b>↓ MCV, ↓ MCH, ↓ MCHC</b>.</p></div></div>
+      <div class="it" data-hs="0" style="--c:var(--teal)"><span class="sw"></span><div><h4>Glycine + succinyl-CoA → ALA</h4><p>ALA synthase · vitamin B6</p></div></div>
+      <div class="it" data-hs="1" style="--c:var(--blue)"><span class="sw"></span><div><h4>→ Protoporphyrin IX</h4><p>Several steps</p></div></div>
+      <div class="it" data-hs="2" style="--c:var(--iron)"><span class="sw"></span><div><h4>+ Fe²⁺ → heme</h4><p>Ferrochelatase</p></div></div>
+      <div class="it" data-hs="3" style="--c:var(--red)"><span class="sw"></span><div><h4>Heme + globin → hemoglobin</h4><p>Four chains, four hemes</p></div></div>
+      <div class="it" data-hs="4" style="--c:var(--blue)"><span class="sw"></span><div><h4>Iron deficiency</h4><p>↓ heme → ↓ Hb → ↓ MCV · MCH · MCHC</p></div></div>
     </div>`;
   const items = [...pathHost.querySelectorAll('[data-hs]')];
 
@@ -196,7 +196,7 @@ export default function heme(slide, api) {
   ], (i) => { ironOK = i === 0; });
 
   const counter = slide.querySelector('[data-counter]');
-  counter.innerHTML = `<div class="stat"><div class="v num" data-n style="font-size:72px">0</div><div class="k">heme molecules formed in this demo</div></div>`;
+  counter.innerHTML = `<div class="stat"><div class="v num" data-n style="font-size:72px">0</div><div class="k">heme formed</div></div>`;
   const nEl = counter.querySelector('[data-n]');
   counter.style.opacity = 0;
   counter.style.transition = 'opacity .6s';

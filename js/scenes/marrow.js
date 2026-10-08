@@ -351,7 +351,7 @@ export default function marrow(slide, api) {
     plasma.forEach((g, i) => { g.rotation.y = time * 0.15 + i; });
 
     // diapedesis loop (6 s)
-    exitT = (exitT + dt / 6.5) % 1;
+    exitT = (((exitT + dt / 6.5) % 1) + 1) % 1;
     const u = exitT;
     exitCurve(u);
     k.render();

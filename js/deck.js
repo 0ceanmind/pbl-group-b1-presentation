@@ -16,6 +16,15 @@ export function startDeck() {
   const jumpEl = document.getElementById('jump');
 
   const state = { i: -1, step: 0, scale: 1 };
+  const secEl = document.getElementById('sec');
+  const byId = (id) => slides.findIndex((s) => s.id === id);
+  const visited = new Set();
+  // SLO sections: "SLO 3" → [slide indices]
+  const sections = {};
+  slides.forEach((s, k) => {
+    const m = /^SLO (\d)$/.exec(s.dataset.section || '');
+    if (m) (sections[m[1]] = sections[m[1]] || []).push(k);
+  });
   const ctrl = new Array(slides.length).fill(null);
   const running = new Set();
   const leaveTimers = new Map();
@@ -28,7 +37,13 @@ export function startDeck() {
     css: (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim(),
     get theme() { return document.documentElement.dataset.theme || 'dark'; },
     slides,
+    visited,
+    goId: (id) => goId(id),
   };
+  function goId(id) {
+    const k = byId(id);
+    if (k >= 0) go(k, 0);
+  }
 
   // ---- steps -------------------------------------------------------------
   function maxSteps(i) {
@@ -140,6 +155,16 @@ export function startDeck() {
     const hash = `#/${state.i + 1}${state.step ? '.' + state.step : ''}`;
     if (location.hash !== hash) history.replaceState(null, '', hash);
     document.title = `${slides[state.i].dataset.title || 'Slide'} · PBL Group B-1`;
+    const sm = /^SLO (\d)$/.exec(slides[state.i].dataset.section || '');
+    if (sm) {
+      const list = sections[sm[1]];
+      if (slides[state.i].classList.contains('s-keys')) visited.add(sm[1]);
+      secEl.innerHTML = `<span class="lbl">SLO ${sm[1]}</span>` + list.map((k) => `<i class="${k === state.i ? 'on' : k < state.i ? 'past' : ''}"></i>`).join('');
+      secEl.style.display = '';
+    } else {
+      secEl.innerHTML = '';
+      secEl.style.display = 'none';
+    }
     overview.querySelectorAll('.ov-item').forEach((b, k) => b.classList.toggle('cur', k === state.i));
   }
 
@@ -186,7 +211,13 @@ export function startDeck() {
     if (e.metaKey || e.ctrlKey || e.altKey) return;
     const k = e.key;
     if (overview.classList.contains('on') || help.classList.contains('on')) {
-      if (k === 'Escape' || k === 'o' || k === 'O' || k === '?' || k === 'h') { toggle(overview, false); toggle(help, false); e.preventDefault(); }
+      if (k === 'Escape' || k === 'o' || k === 'O' || k === '?' || k === 'h' || k === 'H') { toggle(overview, false); toggle(help, false); e.preventDefault(); }
+      return;
+    }
+    // on the objectives hub, 1–6 open that objective directly
+    if (slides[state.i].id === 'hub' && /^[1-6]$/.test(k) && !jumpBuf) {
+      e.preventDefault();
+      goId(`slo${k}`);
       return;
     }
     if (/^[0-9]$/.test(k)) {
@@ -213,12 +244,21 @@ export function startDeck() {
     else if (k === 'o' || k === 'O' || k === 'Escape') toggle(overview);
     else if (k === 't' || k === 'T') toggleTheme();
     else if (k === 'b' || k === 'B' || k === '.') toggle(blackout);
-    else if (k === '?' || k === 'h' || k === 'H') toggle(help);
+    else if (k === 'h' || k === 'H') { e.preventDefault(); goId('hub'); }
+    else if (k === '?') toggle(help);
   }, true);
 
   document.getElementById('nav-prev').addEventListener('click', prev);
   document.getElementById('nav-next').addEventListener('click', next);
   document.getElementById('nav-grid').addEventListener('click', () => toggle(overview));
+  document.getElementById('nav-hub').addEventListener('click', () => goId('hub'));
+  // any element with data-go="<slide id>" jumps there
+  stage.addEventListener('click', (e) => {
+    const b = e.target.closest('[data-go]');
+    if (!b) return;
+    e.stopPropagation();
+    goId(b.dataset.go);
+  });
   document.getElementById('nav-full').addEventListener('click', fullscreen);
   blackout.addEventListener('click', () => toggle(blackout, false));
 
@@ -251,10 +291,13 @@ export function startDeck() {
   let last = performance.now();
   function loop(now) {
     requestAnimationFrame(loop);
-    const dt = Math.min(0.05, (now - last) / 1000);
+    const dt = Math.max(0, Math.min(0.05, (now - last) / 1000));
     last = now;
     const t = now / 1000;
-    running.forEach((c) => { if (c.frame) c.frame(t, dt); });
+    running.forEach((c) => {
+      if (!c.frame) return;
+      try { c.frame(t, dt); } catch (err) { console.error(err); }
+    });
   }
   requestAnimationFrame(loop);
 

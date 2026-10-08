@@ -24,7 +24,7 @@ export function erythro(slide) {
   const lg = S('linearGradient', { id: `${D.id}-hb`, x1: 0, x2: 1 }, D.d);
   [['0%', '#5a63d8'], ['45%', '#a86fbf'], ['70%', '#e2607a'], ['100%', '#e5243b']].forEach(([o, c]) => S('stop', { offset: o, 'stop-color': c }, lg));
   S('rect', { x: 345, y: 444, width: 1235, height: 12, rx: 6, fill: `url(#${D.id}-hb)` }, gBar);
-  S('text', { x: 345, y: 488, class: 't-sm', text: 'Hemoglobin accumulates → cytoplasm turns from blue to red; nucleus condenses and is extruded' }, gBar);
+  S('text', { x: 345, y: 488, class: 't-sm', text: 'Hemoglobin ↑ · nucleus extruded' }, gBar);
 
   // chevrons
   for (let i = 0; i < xs.length - 1; i++) {
@@ -33,7 +33,7 @@ export function erythro(slide) {
   }
   // iron rail
   const gIron = S('g', { opacity: 0 }, svg);
-  S('text', { x: 345, y: 30, class: 't-sm', text: 'Iron delivered by transferrin → heme → hemoglobin', style: 'fill:#ffb340' }, gIron);
+  S('text', { x: 345, y: 30, class: 't-sm', text: 'Iron → heme → hemoglobin', style: 'fill:#ffb340' }, gIron);
   const ironPaths = [2, 3, 4].map((i) => S('path', { d: `M ${xs[i] - 60} 52 C ${xs[i] - 30} 70, ${xs[i]} 120, ${xs[i]} ${cy - 30}`, fill: 'none', stroke: 'none' }, gIron));
   const ironFlows = ironPaths.map((p, i) => new Flow({ parent: gIron, path: p, count: 5, r: 7, fill: '#ffb340', speed: 0.35, seed: i + 9 }));
 
@@ -123,7 +123,7 @@ export function epo(slide) {
     { a: -18, t: 'O₂ delivery ↓', s: 'tissue hypoxia', c: '#40c8e0' },
     { a: 54, t: 'Kidney', s: '↑ erythropoietin', c: '#bf5af2' },
     { a: 126, t: 'Bone marrow', s: 'stimulated', c: '#ff9f0a' },
-    { a: 198, t: 'Iron lacking', s: 'poorly hemoglobinized cells', c: '#0a84ff' },
+    { a: 198, t: 'Iron lacking', s: 'poorly hemoglobinized', c: '#0a84ff' },
   ];
   const arcs = [];
   for (let i = 0; i < 5; i++) {

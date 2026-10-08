@@ -20,31 +20,34 @@
 
 <div id="viewport"><div id="stage">
 
-<!-- ============================ 1 · TITLE ============================ -->
+<!-- ============================ TITLE ============================ -->
 <section class="slide s-title wash-left" data-title="From Marrow to Microcyte" data-ctrl="hero">
   <div class="viz3d"></div>
   <div class="hero-text">
     <div class="kicker">MD 2 · PBL Group B-1 Research</div>
     <h1 class="display">From marrow<br><span class="grad">to microcyte.</span></h1>
-    <p class="lead">Following iron through the life of a red blood cell — and what happens when it runs out.</p>
+    <p class="lead">Iron-deficiency anemia — from the marrow to the blood film.</p>
   </div>
   <div class="meta">
     <div><div class="k">Under the supervision of</div><div class="v">Dr. Waqas Hameed</div></div>
     <div><div class="k">Academic year</div><div class="v">2026 – 2027</div></div>
   </div>
-  <div class="hint"><kbd>→</kbd> next &nbsp;·&nbsp; <kbd>F</kbd> full screen &nbsp;·&nbsp; <kbd>?</kbd> help</div>
+  <div class="hint"><kbd>→</kbd> next &nbsp;·&nbsp; <kbd>H</kbd> objectives &nbsp;·&nbsp; <kbd>F</kbd> full screen</div>
 </section>
 
-<!-- ============================ 2 · CASE ============================ -->
-<section class="slide s-case" data-title="The case" data-ctrl="case">
+<!-- ============================ CASE ============================ -->
+<section class="slide s-case" id="case" data-title="The case" data-section="Case" data-ctrl="case">
   <canvas class="ecg"></canvas>
   <header class="hd">
     <div class="kicker">The case</div>
-    <h2 class="title">Months of heavy bleeding —<br><span class="muted">and blood that carries less oxygen.</span></h2>
+    <h2 class="title">Heavy bleeding. <span class="muted">Less oxygen.</span></h2>
   </header>
   <div class="case-grid">
     <div>
-      <p class="lead" style="margin-bottom:40px">Heavy, prolonged menstrual bleeding for several months, with a diet that contains limited iron-rich foods.</p>
+      <ul class="pts" style="margin-bottom:44px">
+        <li>Heavy, prolonged menstrual bleeding — months</li>
+        <li>Diet low in iron-rich foods</li>
+      </ul>
       <div data-step="1">
         <div class="sym-group">
           <div class="caption">Symptoms</div>
@@ -67,28 +70,32 @@
       <div class="row-l"><span class="k">RDW</span><span class="v num">18<small>%</small><span class="ar up">↑</span></span></div>
       <div class="row-l"><span class="k">Reticulocytes</span><span class="v num">0.7<small>%</small></span></div>
       <div class="row-l"><span class="k">Blood film</span><span class="v txt">Microcytic · hypochromic<br>anisocytosis</span></div>
-      <div class="row-l"><span class="k">Iron studies</span><span class="v txt"><span class="down">↓</span> ferritin · <span class="down">↓</span> serum iron<br><span class="up">↑</span> TIBC · <span class="down">↓</span> transferrin saturation</span></div>
+      <div class="row-l"><span class="k">Iron studies</span><span class="v txt"><span class="down">↓</span> ferritin · <span class="down">↓</span> iron<br><span class="up">↑</span> TIBC · <span class="down">↓</span> saturation</span></div>
     </div>
   </div>
   <div class="question" data-step="3">Why are her red cells <span class="grad">small, pale and unequal?</span></div>
   <div class="src">Group B-1 case data</div>
 </section>
 
-<!-- ============================ 3 · ROADMAP ============================ -->
-<section class="slide s-road" data-title="Six objectives" data-ctrl="road">
+<!-- ============================ HUB ============================ -->
+<section class="slide s-road" id="hub" data-title="Objectives hub" data-section="Hub" data-ctrl="road">
   <header class="hd">
-    <div class="kicker">The journey</div>
-    <h2 class="title">Six objectives. <span class="muted">One patient.</span></h2>
+    <div class="kicker">Six objectives</div>
+    <h2 class="title">Choose an objective.</h2>
   </header>
   <div class="road">
-    <button class="stop" data-go="slo1" data-step="1"><span class="n grad">01</span><h3>Structure of red bone marrow</h3><p>Where red cells are made.</p></button>
-    <button class="stop" data-go="slo2" data-step="1"><span class="n grad">02</span><h3>Histology of liver &amp; spleen</h3><p>The organs that inspect and recycle.</p></button>
-    <button class="stop" data-go="slo3" data-step="1"><span class="n grad">03</span><h3>Recycling iron &amp; red cells</h3><p>Macrophages, ferroportin, hepcidin.</p></button>
-    <button class="stop" data-go="slo4" data-step="2"><span class="n grad">04</span><h3>Synthesis, breakdown, anemia &amp; polycythemia</h3><p>Too few cells — or too many.</p></button>
-    <button class="stop" data-go="slo5" data-step="2"><span class="n grad">05</span><h3>Reading the red cell indices</h3><p>Hb, Hct, MCV, MCH, MCHC, RDW, RBC.</p></button>
-    <button class="stop" data-go="slo6" data-step="2"><span class="n grad">06</span><h3>Biochemistry of iron deficiency</h3><p>From a missing atom to a microcyte.</p></button>
+    <button class="stop" data-go="slo1" data-n="1"><span class="n grad">01</span><h3>Structure of red bone marrow</h3><span class="done-mark">Presented</span></button>
+    <button class="stop" data-go="slo2" data-n="2"><span class="n grad">02</span><h3>Histology of liver &amp; spleen</h3><span class="done-mark">Presented</span></button>
+    <button class="stop" data-go="slo3" data-n="3"><span class="n grad">03</span><h3>Recycling iron &amp; red cells</h3><span class="done-mark">Presented</span></button>
+    <button class="stop" data-go="slo4" data-n="4"><span class="n grad">04</span><h3>Synthesis, breakdown, anemia &amp; polycythemia</h3><span class="done-mark">Presented</span></button>
+    <button class="stop" data-go="slo5" data-n="5"><span class="n grad">05</span><h3>Hb, Hct, MCV, MCH, MCHC, RDW &amp; RBC</h3><span class="done-mark">Presented</span></button>
+    <button class="stop" data-go="slo6" data-n="6"><span class="n grad">06</span><h3>Biochemistry of iron deficiency</h3><span class="done-mark">Presented</span></button>
   </div>
-  <div class="src">Group B-1 student learning objectives</div>
+  <div class="hub-foot">
+    <button class="btn ghost" data-go="case">The case</button>
+    <button class="btn ghost" data-go="synthesis">Putting it together</button>
+    <span class="hub-hint"><kbd>1</kbd>–<kbd>6</kbd> open an objective · <kbd>H</kbd> returns here from any slide</span>
+  </div>
 </section>
 
 <!-- ============================ SLO 1 ============================ -->
@@ -99,7 +106,7 @@
     <div>
       <div class="kicker">Student learning objective 1</div>
       <h2 class="title">Structure of<br>red bone marrow</h2>
-      <p class="lead">Where every red blood cell begins.</p>
+      <p class="lead">Where every red cell begins.</p>
     </div>
   </div>
 </section>
@@ -109,19 +116,22 @@
     <div class="kicker">SLO 1 · Hematopoiesis</div>
     <h2 class="title">A tissue built to make blood.</h2>
   </header>
-  <div class="split-l" style="top:290px;width:700px">
-    <p class="lead" style="font-size:33px">Red bone marrow is a <b>highly vascular connective tissue</b> responsible for <b>hematopoiesis</b> — the continuous production of blood cells from multipotent hematopoietic stem cells.</p>
-    <div data-step="3" style="margin-top:40px">
-      <div class="caption" style="margin-bottom:14px;text-transform:uppercase;letter-spacing:.14em;font-weight:650;font-size:19px">Regulated by growth &amp; differentiation factors</div>
+  <div class="split-l" style="top:300px;width:700px">
+    <ul class="pts">
+      <li>Highly vascular connective tissue</li>
+      <li>Stem cells → all blood cells</li>
+    </ul>
+    <div data-step="3" style="margin-top:46px">
+      <div class="caption" style="margin-bottom:14px;text-transform:uppercase;letter-spacing:.14em;font-weight:650;font-size:19px">Regulated by</div>
       <div class="chips">
-        <span class="chip" style="color:var(--teal)"><span class="dot"></span><span style="color:var(--text)">Stem cell factor (SCF)</span></span>
+        <span class="chip" style="color:var(--teal)"><span class="dot"></span><span style="color:var(--text)">SCF</span></span>
         <span class="chip" style="color:var(--purple)"><span class="dot"></span><span style="color:var(--text)">Cytokines</span></span>
         <span class="chip" style="color:var(--red)"><span class="dot"></span><span style="color:var(--text)">Erythropoietin</span></span>
       </div>
     </div>
-    <div class="row" data-step="4" style="margin-top:40px;gap:20px">
-      <div class="card tight" style="flex:1"><h3 style="font-size:28px"><span class="c-red">●</span> Red marrow</h3><p style="font-size:22px">Active hematopoiesis — in adults, mainly in the <b>axial skeleton</b>.</p></div>
-      <div class="card tight" style="flex:1"><h3 style="font-size:28px"><span class="c-gold">●</span> Yellow marrow</h3><p style="font-size:22px">Much of the remaining marrow — predominantly <b>adipose tissue</b>.</p></div>
+    <div class="row" data-step="4" style="margin-top:44px;gap:20px">
+      <div class="card tight" style="flex:1"><h3 style="font-size:28px"><span class="c-red">●</span> Red marrow</h3><p style="font-size:24px">Adults: axial skeleton</p></div>
+      <div class="card tight" style="flex:1"><h3 style="font-size:28px"><span class="c-gold">●</span> Yellow marrow</h3><p style="font-size:24px">Mostly adipose</p></div>
     </div>
   </div>
   <div class="viz" data-viz style="left:860px;top:250px;width:960px;height:760px"></div>
@@ -135,18 +145,35 @@
     <div class="kicker">SLO 1 · Microanatomy</div>
     <h2 class="title">Cords between<br>sinusoids.</h2>
   </header>
-  <div class="split-l" style="top:auto;bottom:110px;width:640px">
-    <div class="capbox" style="min-height:300px">
-      <div class="cap" data-step="0" data-until="1" data-anim="fade"><h4>The architecture</h4><p>Red marrow consists of <b>marrow cords</b> separated by <b>vascular sinusoids</b>.</p></div>
-      <div class="cap" data-step="1" data-until="2" data-anim="fade"><h4 class="c-pink">Vascular sinusoids</h4><p>Vascular channels that separate the cords. Mature blood cells cross the sinusoidal wall to enter the bloodstream.</p></div>
-      <div class="cap" data-step="2" data-until="3" data-anim="fade"><h4 class="c-teal">The marrow cord</h4><p>Supported by <b>reticular cells</b> and <b>reticulin fibres (type III collagen)</b>; contains developing blood cells, macrophages, adipocytes, plasma cells and megakaryocytes.</p></div>
-      <div class="cap" data-step="3" data-until="4" data-anim="fade"><h4 class="c-red">Erythroblastic island</h4><p>Erythroid precursors gather around a <b>central macrophage</b>, which supports them and helps regulate their maturation and release.</p></div>
-      <div class="cap" data-step="4" data-until="5" data-anim="fade"><h4 class="c-purple">Megakaryocyte</h4><p>Lies close to the sinusoid, releasing <b>platelets directly into the circulation</b>.</p></div>
-      <div class="cap" data-step="5" data-anim="fade"><h4 class="c-red">Entering the blood</h4><p>Mature red cells <b>cross the sinusoidal wall</b> and join the circulation.</p></div>
+  <div class="split-l" style="top:auto;bottom:120px;width:640px">
+    <div class="capbox" style="min-height:150px">
+      <div class="cap" data-step="0" data-until="1" data-anim="fade"><h4>Architecture</h4><p>Marrow cords between vascular sinusoids</p></div>
+      <div class="cap" data-step="1" data-until="2" data-anim="fade"><h4 class="c-pink">Sinusoids</h4><p>Vascular channels between cords</p></div>
+      <div class="cap" data-step="2" data-until="3" data-anim="fade"><h4 class="c-teal">Marrow cord</h4><p>Reticular cells · reticulin (type III collagen)</p></div>
+      <div class="cap" data-step="3" data-until="4" data-anim="fade"><h4 class="c-red">Erythroblastic island</h4><p>Erythroblasts around a central macrophage</p></div>
+      <div class="cap" data-step="4" data-until="5" data-anim="fade"><h4 class="c-purple">Megakaryocyte</h4><p>Beside the sinusoid → platelets into blood</p></div>
+      <div class="cap" data-step="5" data-anim="fade"><h4 class="c-red">Into the blood</h4><p>Mature cells cross the sinusoid wall</p></div>
     </div>
   </div>
   <div class="drag-hint">Drag to rotate · illustrative 3D model</div>
   <div class="src">Group B-1 research · Li et al. 2020 · Machlus &amp; Italiano 2013</div>
+</section>
+
+<section class="slide s-keys" data-title="SLO 1 — Key points" data-section="SLO 1" data-ctrl="divider" data-steps="5">
+  <canvas class="ambient"></canvas>
+  <div class="ghost-num">01</div>
+  <header class="hd">
+    <div class="kicker">SLO 1 · Key points</div>
+    <h2 class="title">Red bone marrow</h2>
+  </header>
+  <ol class="keys">
+    <li data-step="1"><span class="n">1</span>Vascular tissue that makes all blood cells</li>
+    <li data-step="2"><span class="n">2</span>Cords separated by sinusoids</li>
+    <li data-step="3"><span class="n">3</span>Erythroblastic islands around macrophages</li>
+    <li data-step="4"><span class="n">4</span>Megakaryocytes release platelets into sinusoids</li>
+  </ol>
+  <div class="case-link" data-step="5"><span class="tag red">Our patient</span>Marrow is stimulated — but short of iron</div>
+  <button class="btn ghost back" data-go="hub">← All objectives</button>
 </section>
 
 <!-- ============================ SLO 2 ============================ -->
@@ -157,7 +184,7 @@
     <div>
       <div class="kicker">Student learning objective 2</div>
       <h2 class="title">Histology of<br>liver &amp; spleen</h2>
-      <p class="lead">Two organs that inspect the blood — and reclaim what it carries.</p>
+      <p class="lead">Two organs that filter and recycle.</p>
     </div>
   </div>
 </section>
@@ -169,14 +196,14 @@
     <div class="kicker">SLO 2 · Liver</div>
     <h2 class="title">The hepatic lobule.</h2>
   </header>
-  <div class="split-l" style="top:250px;width:690px">
+  <div class="split-l" style="top:250px;width:640px">
     <div class="steps-list compact">
-      <div class="it" data-cur="0" style="--c:var(--blue)"><span class="sw"></span><div><h4>Central vein</h4><p>At the centre of a roughly hexagonal lobule; receives blood from the sinusoids.</p></div></div>
-      <div class="it" data-cur="1" style="--c:#e8967a"><span class="sw"></span><div><h4>Hepatocytes</h4><p>The main liver cells, arranged in plates or cords.</p></div></div>
-      <div class="it" data-cur="2" style="--c:var(--red)"><span class="sw"></span><div><h4>Hepatic sinusoids</h4><p>Specialised blood channels between hepatocyte plates.</p></div></div>
-      <div class="it" data-cur="3" style="--c:var(--indigo)"><span class="sw"></span><div><h4>Portal triad</h4><p>At the corners: portal vein branch, hepatic artery and bile duct.</p></div></div>
-      <div class="it" data-cur="4" style="--c:var(--amber)"><span class="sw"></span><div><h4>Kupffer cells</h4><p>Macrophages along the sinusoids; remove foreign particles and cellular debris.</p></div></div>
-      <div class="it" data-cur="5" style="--c:var(--green)"><span class="sw"></span><div><h4>Bile canaliculi</h4><p>Small channels between hepatocytes; collect bile and direct it toward the bile ducts.</p></div></div>
+      <div class="it" data-cur="0" style="--c:var(--blue)"><span class="sw"></span><div><h4>Central vein</h4><p>Centre of the hexagon</p></div></div>
+      <div class="it" data-cur="1" style="--c:#e8967a"><span class="sw"></span><div><h4>Hepatocytes</h4><p>Plates / cords</p></div></div>
+      <div class="it" data-cur="2" style="--c:var(--red)"><span class="sw"></span><div><h4>Sinusoids</h4><p>Blood → central vein</p></div></div>
+      <div class="it" data-cur="3" style="--c:var(--indigo)"><span class="sw"></span><div><h4>Portal triad</h4><p>Portal vein · hepatic artery · bile duct</p></div></div>
+      <div class="it" data-cur="4" style="--c:var(--amber)"><span class="sw"></span><div><h4>Kupffer cells</h4><p>Macrophages — clear debris</p></div></div>
+      <div class="it" data-cur="5" style="--c:var(--green)"><span class="sw"></span><div><h4>Bile canaliculi</h4><p>Bile → bile ducts</p></div></div>
     </div>
   </div>
   <div class="drag-hint">Drag to rotate · illustrative 3D model</div>
@@ -188,16 +215,32 @@
     <div class="kicker">SLO 2 · Spleen</div>
     <h2 class="title">Two pulps. One filter.</h2>
   </header>
-  <div class="split-l" style="top:270px;width:640px">
-    <p class="lead" style="font-size:31px;margin-bottom:30px">Surrounded by a connective tissue <b>capsule</b>, the spleen contains two main histological regions.</p>
+  <div class="split-l" style="top:300px;width:640px">
     <div class="steps-list">
-      <div class="it" data-cur="1" style="--c:#b9a6ff"><span class="sw"></span><div><h4>Capsule &amp; trabeculae</h4><p>Connective tissue extensions from the capsule provide structural support.</p></div></div>
-      <div class="it" data-cur="2" style="--c:var(--text-2)"><span class="sw"></span><div><h4>White pulp</h4><p>Lymphoid tissue rich in lymphocytes, surrounding branches of the splenic artery — immune responses.</p></div></div>
-      <div class="it" data-cur="3" style="--c:var(--red)"><span class="sw"></span><div><h4>Red pulp</h4><p>Splenic cords and sinusoids — filters blood and removes old or damaged red cells.</p></div></div>
+      <div class="it" data-cur="1" style="--c:#b9a6ff"><span class="sw"></span><div><h4>Capsule &amp; trabeculae</h4><p>Structural support</p></div></div>
+      <div class="it" data-cur="2" style="--c:var(--text-2)"><span class="sw"></span><div><h4>White pulp</h4><p>Lymphocytes · immune responses</p></div></div>
+      <div class="it" data-cur="3" style="--c:var(--red)"><span class="sw"></span><div><h4>Red pulp</h4><p>Cords + sinusoids · removes old RBCs</p></div></div>
     </div>
   </div>
   <div class="viz" data-viz style="left:820px;top:200px;width:1000px;height:800px"></div>
   <div class="src">Group B-1 research · OpenStax Biology · StatPearls: Anatomy, Spleen</div>
+</section>
+
+<section class="slide s-keys" data-title="SLO 2 — Key points" data-section="SLO 2" data-ctrl="divider" data-steps="5">
+  <canvas class="ambient"></canvas>
+  <div class="ghost-num">02</div>
+  <header class="hd">
+    <div class="kicker">SLO 2 · Key points</div>
+    <h2 class="title">Liver &amp; spleen</h2>
+  </header>
+  <ol class="keys">
+    <li data-step="1"><span class="n">1</span>Hexagonal lobules around a central vein</li>
+    <li data-step="2"><span class="n">2</span>Portal triads sit at the corners</li>
+    <li data-step="3"><span class="n">3</span>Kupffer cells line the sinusoids</li>
+    <li data-step="4"><span class="n">4</span>Spleen: white pulp immunity · red pulp filter</li>
+  </ol>
+  <div class="case-link" data-step="5"><span class="tag red">Our patient</span>These organs recycle iron from her old red cells</div>
+  <button class="btn ghost back" data-go="hub">← All objectives</button>
 </section>
 
 <!-- ============================ SLO 3 ============================ -->
@@ -207,8 +250,8 @@
     <div class="dv-num">03</div>
     <div>
       <div class="kicker">Student learning objective 3</div>
-      <h2 class="title">Roles of liver &amp; spleen<br>in recycling iron &amp; red cells</h2>
-      <p class="lead">Old cells are retired. Their iron is not wasted.</p>
+      <h2 class="title">Liver &amp; spleen in recycling<br>iron &amp; red cells</h2>
+      <p class="lead">Old cells retired. Iron reused.</p>
     </div>
   </div>
 </section>
@@ -217,13 +260,13 @@
   <header class="hd">
     <div class="kicker">SLO 3 · Removal of old red cells</div>
     <h2 class="title">120 days. Then the squeeze.</h2>
-    <p class="lead">As red cells age, their membranes lose pliability. Old, fragile cells rupture while squeezing through the red pulp — and macrophages engulf them.</p>
+    <p class="lead">Aged cells stiffen → rupture in the red pulp → phagocytosed.</p>
   </header>
   <div class="viz" data-viz style="left:112px;top:420px;width:1696px;height:470px"><canvas style="width:100%;height:100%"></canvas></div>
   <div class="abs" data-ctl style="left:112px;top:908px"></div>
   <div class="abs row" style="right:112px;top:906px;gap:44px">
-    <div class="stat"><div class="v num" style="font-size:52px">≈120<small>days</small></div><div class="k">Red cell life span</div></div>
-    <div class="stat"><div class="v num" style="font-size:52px">≈8<small>µm</small></div><div class="k">Red cell diameter</div></div>
+    <div class="stat"><div class="v num" style="font-size:52px">≈120<small>days</small></div><div class="k">Life span</div></div>
+    <div class="stat"><div class="v num" style="font-size:52px">≈8<small>µm</small></div><div class="k">Red cell</div></div>
     <div class="stat"><div class="v num" style="font-size:52px">≈3<small>µm</small></div><div class="k">Red pulp spaces</div></div>
   </div>
   <div class="src">Group B-1 research · Guyton &amp; Hall, Ch. 33</div>
@@ -234,13 +277,13 @@
     <div class="kicker">SLO 3 · Iron recycling</div>
     <h2 class="title">Inside the red-pulp macrophage.</h2>
   </header>
-  <div class="split-l" style="top:250px;width:600px">
+  <div class="split-l" style="top:270px;width:600px">
     <div class="steps-list compact">
-      <div class="it" data-cur="0" style="--c:var(--red)"><span class="sw"></span><div><h4>Erythrophagocytosis</h4><p>Red pulp macrophages recognise and engulf senescent red cells.</p></div></div>
-      <div class="it" data-cur="1" style="--c:var(--green)"><span class="sw"></span><div><h4>Hemoglobin is split</h4><p>Globin → amino acids. Heme carries the iron to be recycled.</p></div></div>
-      <div class="it" data-cur="2" style="--c:var(--amber)"><span class="sw"></span><div><h4>Heme oxygenase-1</h4><p>HO-1 degrades heme, releasing free iron. The porphyrin becomes bilirubin.</p></div></div>
-      <div class="it" data-cur="3" style="--c:var(--mint)"><span class="sw"></span><div><h4>Ferroportin</h4><p>Exports iron into plasma — the only known cellular iron exporter.</p></div></div>
-      <div class="it" data-cur="4" style="--c:var(--teal)"><span class="sw"></span><div><h4>Transferrin</h4><p>Carries iron to the bone marrow to build new red cells.</p></div></div>
+      <div class="it" data-cur="0" style="--c:var(--red)"><span class="sw"></span><div><h4>Erythrophagocytosis</h4><p>Old red cells engulfed</p></div></div>
+      <div class="it" data-cur="1" style="--c:var(--green)"><span class="sw"></span><div><h4>Hemoglobin split</h4><p>Globin → amino acids · heme</p></div></div>
+      <div class="it" data-cur="2" style="--c:var(--amber)"><span class="sw"></span><div><h4>Heme oxygenase-1</h4><p>Heme → free iron + bilirubin</p></div></div>
+      <div class="it" data-cur="3" style="--c:var(--mint)"><span class="sw"></span><div><h4>Ferroportin</h4><p>The only known iron exporter</p></div></div>
+      <div class="it" data-cur="4" style="--c:var(--teal)"><span class="sw"></span><div><h4>Transferrin</h4><p>Iron → bone marrow</p></div></div>
     </div>
   </div>
   <div class="viz" data-viz style="left:780px;top:220px;width:1040px;height:790px"></div>
@@ -253,30 +296,30 @@
     <h2 class="title">Hepcidin holds the key.</h2>
   </header>
   <div class="abs" data-ctl style="left:112px;top:262px"></div>
-  <div class="split-l" style="top:380px;width:640px">
-    <div class="modes" style="min-height:520px">
+  <div class="split-l" style="top:400px;width:640px">
+    <div class="modes" style="min-height:420px">
       <div class="md" data-mode="0" style="--c:var(--purple)">
-        <h4>The hormone</h4>
+        <h4>Hepcidin · from the liver</h4>
         <ul>
-          <li>Hepcidin is produced by the <b>liver</b>.</li>
-          <li>It binds ferroportin on the macrophage, causing its <b>internalization and degradation</b>.</li>
-          <li>Iron is trapped inside the cell; plasma iron falls.</li>
+          <li>Binds ferroportin</li>
+          <li>Ferroportin degraded</li>
+          <li>Iron trapped · plasma iron ↓</li>
         </ul>
       </div>
       <div class="md" data-mode="1" style="--c:var(--mint)">
         <h4>Iron deficiency <span class="tag red" style="vertical-align:middle;margin-left:8px">Our patient</span></h4>
         <ul>
-          <li>Hepcidin is <b>suppressed</b>.</li>
-          <li>Ferroportin remains active on the membrane.</li>
-          <li><b>More recycled iron</b> is released into plasma.</li>
+          <li>Hepcidin ↓</li>
+          <li>Ferroportin stays active</li>
+          <li>More iron released</li>
         </ul>
       </div>
       <div class="md" data-mode="2" style="--c:var(--amber)">
         <h4>Inflammation</h4>
         <ul>
-          <li><b>IL-6</b> stimulates hepcidin.</li>
-          <li>Ferroportin is degraded; iron is <b>trapped in macrophages</b>.</li>
-          <li>Result: the hypoferremia of <b>anemia of inflammation</b>.</li>
+          <li>IL-6 → hepcidin ↑</li>
+          <li>Iron trapped in macrophages</li>
+          <li>Anemia of inflammation</li>
         </ul>
       </div>
     </div>
@@ -289,9 +332,8 @@
   <header class="hd">
     <div class="kicker">SLO 3 · Role of the liver</div>
     <h2 class="title">Recycle the iron. <span class="muted">Clear the pigment.</span></h2>
-    <p class="lead">Old red cells are removed by <b>Kupffer cells</b> in the liver and by macrophages in the spleen and bone marrow.</p>
   </header>
-  <div class="viz" data-viz style="left:112px;top:410px;width:1696px;height:590px"></div>
+  <div class="viz" data-viz style="left:112px;top:330px;width:1696px;height:590px"></div>
   <div class="src">Group B-1 research · Guyton &amp; Hall, Ch. 33</div>
 </section>
 
@@ -301,8 +343,25 @@
     <h2 class="title">Recycling can’t outrun bleeding.</h2>
   </header>
   <div class="viz" data-viz style="left:112px;top:270px;width:1696px;height:600px"></div>
-  <div class="verdict" data-step="3" style="font-size:31px;bottom:76px"><span class="tag">Our patient</span>The spleen recycles iron, but not enough to compensate for continuous menstrual loss — so hemoglobin production falls.</div>
+  <div class="verdict" data-step="3" style="bottom:76px"><span class="tag">Our patient</span>Continuous loss outpaces recycling → hemoglobin ↓</div>
   <div class="src">Guyton &amp; Hall, Ch. 33 · Group B-1 research</div>
+</section>
+
+<section class="slide s-keys" data-title="SLO 3 — Key points" data-section="SLO 3" data-ctrl="divider" data-steps="5">
+  <canvas class="ambient"></canvas>
+  <div class="ghost-num">03</div>
+  <header class="hd">
+    <div class="kicker">SLO 3 · Key points</div>
+    <h2 class="title">Recycling iron &amp; red cells</h2>
+  </header>
+  <ol class="keys">
+    <li data-step="1"><span class="n">1</span>Old cells (≈120 days) removed in the red pulp</li>
+    <li data-step="2"><span class="n">2</span>Macrophage HO-1 frees iron from heme</li>
+    <li data-step="3"><span class="n">3</span>Ferroportin exports · transferrin carries</li>
+    <li data-step="4"><span class="n">4</span>Hepcidin controls the gate</li>
+  </ol>
+  <div class="case-link" data-step="5"><span class="tag red">Our patient</span>Recycling can’t replace iron lost in bleeding</div>
+  <button class="btn ghost back" data-go="hub">← All objectives</button>
 </section>
 
 <!-- ============================ SLO 4 ============================ -->
@@ -313,7 +372,7 @@
     <div>
       <div class="kicker">Student learning objective 4</div>
       <h2 class="title">Synthesis &amp; breakdown —<br>anemia &amp; polycythemia</h2>
-      <p class="lead">Making red cells, retiring them, and what happens when the balance tips.</p>
+      <p class="lead">Making, retiring — and the balance.</p>
     </div>
   </div>
 </section>
@@ -322,11 +381,11 @@
   <header class="hd">
     <div class="kicker">SLO 4 · Synthesis of red cells</div>
     <h2 class="title">Building a red cell takes iron.</h2>
-    <p class="lead">Hematopoietic stem cells give rise to the <b>erythroid lineage</b>. Iron is essential for heme and hemoglobin synthesis along the way.</p>
+    <p class="lead">Stem cell → erythroid lineage → erythrocyte</p>
   </header>
   <div class="viz" data-viz style="left:112px;top:420px;width:1696px;height:500px"></div>
   <div class="abs" data-ctl style="right:112px;top:930px"></div>
-  <div class="abs caption" data-step="3" style="left:112px;top:944px;width:1000px;font-size:25px;color:var(--text-2)">Iron-deficient: cells are <b class="c-red">smaller</b> and contain <b class="c-red">less hemoglobin</b> — microcytic, hypochromic.</div>
+  <div class="abs" data-step="3" style="left:112px;top:944px;font-size:30px;font-weight:650">Iron-deficient → <span class="c-red">smaller, paler cells</span></div>
   <div class="src">Group B-1 research · stage names: Guyton &amp; Hall, Ch. 33 · illustrative</div>
 </section>
 
@@ -338,18 +397,18 @@
   <div class="viz" data-viz style="left:112px;top:240px;width:940px;height:790px"></div>
   <div class="abs col" style="left:1110px;top:280px;width:700px;gap:26px">
     <div class="card" data-step="2" data-anim="right">
-      <div class="caption" style="text-transform:uppercase;letter-spacing:.14em;font-weight:650;font-size:18px;margin-bottom:16px">Oxygen-carrying capacity</div>
+      <div class="caption" style="text-transform:uppercase;letter-spacing:.14em;font-weight:650;font-size:18px;margin-bottom:16px">O<sub>2</sub>-carrying capacity</div>
       <div data-o2 style="height:200px"></div>
-      <p class="caption" style="font-size:19px;margin-top:12px">Calculated as Hb × 1.34 mL O<sub>2</sub> per gram of hemoglobin (StatPearls). Normal range uses Hb 12–16 g/dL.</p>
+      <p class="caption" style="font-size:18px;margin-top:10px">Hb × 1.34 mL O<sub>2</sub> per g</p>
     </div>
     <div class="card" data-step="3" data-anim="right">
       <div class="row" style="align-items:center;gap:30px">
         <div class="stat"><div class="v num" style="color:var(--red)">0.7<small>%</small></div></div>
-        <p style="font-size:24px">Reticulocyte count — <b>no appropriate rise</b> for the degree of anemia. Normally reticulocytes are slightly under 1% of circulating red cells.</p>
+        <div><h3 style="font-size:30px;margin:0">Reticulocytes</h3><p style="font-size:25px">No appropriate rise</p></div>
       </div>
     </div>
   </div>
-  <div class="src">Group B-1 research · Guyton &amp; Hall, Ch. 33</div>
+  <div class="src">Group B-1 research · Guyton &amp; Hall, Ch. 33 · StatPearls: Oxygen Transport</div>
 </section>
 
 <section class="slide" data-title="Red cell life cycle" data-section="SLO 4" data-ctrl="lifecycle" data-steps="3">
@@ -358,12 +417,12 @@
     <h2 class="title">Born in the marrow. <span class="muted">Retired in the spleen.</span></h2>
   </header>
   <div class="viz" data-viz style="left:700px;top:200px;width:1120px;height:830px"></div>
-  <div class="split-l" style="top:300px;width:600px">
+  <div class="split-l" style="top:320px;width:580px">
     <div class="steps-list compact">
-      <div class="it" data-cur="0" style="--c:var(--red)"><span class="sw"></span><div><h4>≈120 days in circulation</h4><p>Metabolic systems slow; the membrane loses pliability and becomes fragile.</p></div></div>
-      <div class="it" data-cur="1" style="--c:var(--purple)"><span class="sw"></span><div><h4>Rupture &amp; phagocytosis</h4><p>Old cells rupture in tight spots — especially the red pulp. Hemoglobin is taken up by macrophages: Kupffer cells, spleen, bone marrow.</p></div></div>
-      <div class="it" data-cur="2" style="--c:var(--amber)"><span class="sw"></span><div><h4>Iron returns</h4><p>Transferrin carries iron to the marrow for new red cells, or to the liver and tissues for storage as ferritin.</p></div></div>
-      <div class="it" data-cur="3" style="--c:var(--gold)"><span class="sw"></span><div><h4>Pigment leaves</h4><p>Porphyrin → bilirubin, secreted by the liver into bile.</p></div></div>
+      <div class="it" data-cur="0" style="--c:var(--red)"><span class="sw"></span><div><h4>≈120 days</h4><p>Membrane loses pliability</p></div></div>
+      <div class="it" data-cur="1" style="--c:var(--purple)"><span class="sw"></span><div><h4>Rupture &amp; phagocytosis</h4><p>Red pulp · Kupffer cells · marrow</p></div></div>
+      <div class="it" data-cur="2" style="--c:var(--amber)"><span class="sw"></span><div><h4>Iron returns</h4><p>Transferrin → marrow or ferritin</p></div></div>
+      <div class="it" data-cur="3" style="--c:var(--gold)"><span class="sw"></span><div><h4>Pigment leaves</h4><p>Porphyrin → bilirubin → bile</p></div></div>
     </div>
   </div>
   <div class="src">Group B-1 research · Guyton &amp; Hall, Ch. 33</div>
@@ -373,17 +432,17 @@
   <header class="hd">
     <div class="kicker">SLO 4 · Anemia</div>
     <h2 class="title">Anemia: one result, many causes.</h2>
-    <p class="lead">A deficiency of hemoglobin in the blood — from too few red cells, or too little hemoglobin in each.</p>
+    <p class="lead">Too few red cells — or too little hemoglobin.</p>
   </header>
   <div class="ag">
-    <div class="ac" data-k="acute"><canvas></canvas><div class="grp">Blood loss</div><h4>Acute hemorrhage</h4><p>Plasma is replaced first, diluting the red cell concentration.</p></div>
-    <div class="ac hl" data-k="chronic"><span class="badge">Our patient</span><canvas></canvas><div class="grp">Blood loss</div><h4>Chronic hemorrhage</h4><p>Iron can’t be absorbed fast enough → small, hemoglobin-poor (microcytic, hypochromic) cells.</p></div>
-    <div class="ac" data-k="aplastic"><canvas></canvas><div class="grp">Marrow failure</div><h4>Aplastic anemia</h4><p>Stem cell damage — radiation, chemotherapy, toxins, autoimmune disease; about half idiopathic.</p></div>
-    <div class="ac" data-k="mega"><canvas></canvas><div class="grp">Maturation failure</div><h4>Megaloblastic anemia</h4><p>Lack of vitamin B12, folic acid or intrinsic factor → large, fragile megaloblasts.</p></div>
-    <div class="ac" data-k="sphero"><canvas></canvas><div class="grp">Hemolytic</div><h4>Hereditary spherocytosis</h4><p>Spherical cells rupture as they pass through the spleen.</p></div>
-    <div class="ac" data-k="sickle"><canvas></canvas><div class="grp">Hemolytic</div><h4>Sickle cell anemia</h4><p>HbS crystallises at low oxygen → sickled, damaged cells and vessel blockage.</p></div>
-    <div class="ac" data-k="rh"><canvas></canvas><div class="grp">Hemolytic</div><h4>Erythroblastosis fetalis</h4><p>Antibodies from an Rh− mother attack the Rh+ fetus’s red cells.</p></div>
-    <div class="ac" data-k="tf"><canvas></canvas><div class="grp">Iron transport</div><h4>Severe hypochromic</h4><p>Transferrin deficiency — iron can’t be delivered to the bone marrow.</p></div>
+    <div class="ac" data-k="acute"><canvas></canvas><div class="grp">Blood loss</div><h4>Acute hemorrhage</h4><p>Plasma replaced → cells diluted</p></div>
+    <div class="ac hl" data-k="chronic"><span class="badge">Our patient</span><canvas></canvas><div class="grp">Blood loss</div><h4>Chronic hemorrhage</h4><p>Iron lost → microcytic, hypochromic</p></div>
+    <div class="ac" data-k="aplastic"><canvas></canvas><div class="grp">Marrow failure</div><h4>Aplastic anemia</h4><p>Stem cell damage</p></div>
+    <div class="ac" data-k="mega"><canvas></canvas><div class="grp">Maturation failure</div><h4>Megaloblastic anemia</h4><p>↓ B12 / folate → large, fragile cells</p></div>
+    <div class="ac" data-k="sphero"><canvas></canvas><div class="grp">Hemolytic</div><h4>Hereditary spherocytosis</h4><p>Spheres rupture in the spleen</p></div>
+    <div class="ac" data-k="sickle"><canvas></canvas><div class="grp">Hemolytic</div><h4>Sickle cell anemia</h4><p>HbS → sickling, vessel blockage</p></div>
+    <div class="ac" data-k="rh"><canvas></canvas><div class="grp">Hemolytic</div><h4>Erythroblastosis fetalis</h4><p>Rh− mother vs Rh+ fetus</p></div>
+    <div class="ac" data-k="tf"><canvas></canvas><div class="grp">Iron transport</div><h4>Severe hypochromic</h4><p>Transferrin deficiency</p></div>
   </div>
   <div class="src">Group B-1 research · Guyton &amp; Hall, Ch. 33</div>
 </section>
@@ -395,11 +454,11 @@
   </header>
   <div class="abs" data-ctl style="left:112px;top:252px"></div>
   <div class="viz" data-viz style="left:112px;top:370px;width:900px;height:330px"><canvas style="width:100%;height:100%;border-radius:28px"></canvas></div>
-  <div class="split-l" style="top:730px;width:900px">
-    <div class="modes" style="min-height:250px">
-      <div class="md" data-mode="0" style="--c:var(--green)"><h4>Normal</h4><p>Blood viscosity is about <b>3×</b> that of water. Cardiac output is the reference point.</p></div>
-      <div class="md" data-mode="1" style="--c:var(--blue)"><h4>Anemia — blood too thin</h4><ul><li>Viscosity may fall to <b>≈1.5×</b> water → less resistance, plus hypoxic vasodilation.</li><li>Cardiac output can rise to <b>3–4×</b> normal; on exertion, severe hypoxia and possible <b>heart failure</b>.</li></ul></div>
-      <div class="md" data-mode="2" style="--c:var(--amber)"><h4>Polycythemia vera — blood too thick</h4><ul><li>Viscosity can reach <b>≈10×</b> water → sluggish flow.</li><li>Cardiac output stays near normal: high viscosity is offset by a larger blood volume.</li></ul></div>
+  <div class="split-l" style="top:740px;width:900px">
+    <div class="modes" style="min-height:220px">
+      <div class="md" data-mode="0" style="--c:var(--green)"><h4>Normal</h4><ul><li>Viscosity ≈ 3× water</li></ul></div>
+      <div class="md" data-mode="1" style="--c:var(--blue)"><h4>Anemia — too thin</h4><ul><li>Viscosity ↓ · cardiac output ↑ (3–4×)</li><li>Exertion → hypoxia, heart failure</li></ul></div>
+      <div class="md" data-mode="2" style="--c:var(--amber)"><h4>Polycythemia vera — too thick</h4><ul><li>Viscosity ↑ (up to 10×) → sluggish flow</li><li>Cardiac output ≈ normal</li></ul></div>
     </div>
   </div>
   <div class="viz" data-charts style="left:1080px;top:250px;width:740px;height:740px"></div>
@@ -412,27 +471,44 @@
     <h2 class="title">Polycythemia: <span class="muted">secondary or vera.</span></h2>
   </header>
   <div class="abs grid-2" style="left:112px;top:270px;width:900px;gap:24px">
-    <div class="card" data-step="1" style="min-height:340px">
+    <div class="card" data-step="1" style="min-height:300px">
       <div class="tag" style="margin-bottom:16px">Secondary</div>
-      <h3>A response to hypoxia</h3>
-      <p>High altitude or heart failure drive extra red cell production.</p>
+      <h3>Response to hypoxia</h3>
+      <p>Altitude · heart failure</p>
       <div class="stat" style="margin-top:22px"><div class="v num" style="font-size:66px">6–7<small>million/mm³</small></div></div>
     </div>
-    <div class="card hl" data-step="2" style="min-height:340px">
+    <div class="card hl" data-step="2" style="min-height:300px">
       <div class="tag red" style="margin-bottom:16px">Vera (erythremia)</div>
-      <h3>A stem cell defect</h3>
-      <p>A genetic defect in stem cells causes excessive, continuous production.</p>
+      <h3>Stem cell defect</h3>
+      <p>Excessive, continuous production</p>
       <div class="stat" style="margin-top:22px"><div class="v num" style="font-size:66px">7–8<small>million/mm³</small></div></div>
     </div>
   </div>
-  <div class="abs grid-4" data-step="3" style="left:112px;top:660px;width:900px;gap:18px">
+  <div class="abs grid-4" data-step="3" style="left:112px;top:640px;width:900px;gap:18px">
     <div class="card tight"><p style="font-size:20px"><b style="font-size:30px;display:block;color:var(--text)">60–70%</b>Hematocrit</p></div>
     <div class="card tight"><p style="font-size:20px"><b style="font-size:30px;display:block;color:var(--text)">Up to 2×</b>Blood volume</p></div>
-    <div class="card tight"><p style="font-size:20px"><b style="font-size:30px;display:block;color:var(--text)">≈⅓</b>Develop hypertension</p></div>
-    <div class="card tight"><p style="font-size:20px"><b style="font-size:30px;display:block;color:var(--text)">Ruddy</b>Bluish (cyanotic) tint</p></div>
+    <div class="card tight"><p style="font-size:20px"><b style="font-size:30px;display:block;color:var(--text)">≈⅓</b>Hypertension</p></div>
+    <div class="card tight"><p style="font-size:20px"><b style="font-size:30px;display:block;color:var(--text)">Ruddy</b>Cyanotic tint</p></div>
   </div>
   <div class="viz" data-viz style="left:1090px;top:250px;width:730px;height:760px"></div>
   <div class="src">Group B-1 research · Guyton &amp; Hall, Ch. 33</div>
+</section>
+
+<section class="slide s-keys" data-title="SLO 4 — Key points" data-section="SLO 4" data-ctrl="divider" data-steps="5">
+  <canvas class="ambient"></canvas>
+  <div class="ghost-num">04</div>
+  <header class="hd">
+    <div class="kicker">SLO 4 · Key points</div>
+    <h2 class="title">Make, break, balance</h2>
+  </header>
+  <ol class="keys">
+    <li data-step="1"><span class="n">1</span>Erythropoiesis needs iron for hemoglobin</li>
+    <li data-step="2"><span class="n">2</span>Breakdown: iron reused · porphyrin → bilirubin</li>
+    <li data-step="3"><span class="n">3</span>Anemia: viscosity ↓ · cardiac output ↑</li>
+    <li data-step="4"><span class="n">4</span>Polycythemia: viscosity ↑ · sluggish flow</li>
+  </ol>
+  <div class="case-link" data-step="5"><span class="tag red">Our patient</span>Erythropoietin ↑ — reticulocytes only 0.7%</div>
+  <button class="btn ghost back" data-go="hub">← All objectives</button>
 </section>
 
 <!-- ============================ SLO 5 ============================ -->
@@ -443,7 +519,7 @@
     <div>
       <div class="kicker">Student learning objective 5</div>
       <h2 class="title">Hb, Hct, MCV, MCH,<br>MCHC, RDW &amp; RBC count</h2>
-      <p class="lead">Seven numbers — read together, they describe her red cells.</p>
+      <p class="lead">Seven numbers. One picture.</p>
     </div>
   </div>
 </section>
@@ -486,7 +562,7 @@
   </header>
   <div class="cbc" data-table></div>
   <div class="qs" data-qs></div>
-  <div class="verdict" data-step="5" style="bottom:72px;padding:20px 30px;font-size:33px"><span class="tag">Result</span>Microcytic, hypochromic anemia with increased RDW (anisocytosis)</div>
+  <div class="verdict" data-step="5" style="bottom:72px;padding:20px 30px;font-size:33px"><span class="tag">Result</span>Microcytic, hypochromic anemia · ↑ RDW</div>
   <div class="src">Group B-1 case data · intervals: StatPearls CBC; MCHC: Sarma, Clinical Methods</div>
 </section>
 
@@ -498,15 +574,32 @@
   <div class="viz" data-viz style="left:112px;top:250px;width:1080px;height:770px"></div>
   <div class="abs col" style="left:1260px;top:300px;width:560px;gap:24px">
     <div class="card" data-step="2" data-anim="right">
-      <h3>Why it matters here</h3>
-      <p>Her cells are <b>smaller</b> than normal <i>and</i> <b>vary in size</b> — the pattern commonly seen in iron-deficiency anemia, matching her heavy, prolonged bleeding.</p>
+      <h3>Our patient</h3>
+      <ul class="pts sm"><li>Small + unequal cells</li><li>Typical of iron deficiency</li></ul>
     </div>
     <div class="card" data-step="3" data-anim="right" style="border-color:color-mix(in srgb,var(--amber) 50%,transparent)">
-      <h3 class="c-amber">But RDW alone cannot diagnose</h3>
-      <p>Interpret it with the other CBC findings and the history. <b>Iron studies</b> are needed to confirm iron deficiency.</p>
+      <h3 class="c-amber">RDW alone can’t diagnose</h3>
+      <ul class="pts sm" style="--c:var(--amber)"><li>Read with the full CBC</li><li>Confirm with iron studies</li></ul>
     </div>
   </div>
   <div class="src">Group B-1 research</div>
+</section>
+
+<section class="slide s-keys" data-title="SLO 5 — Key points" data-section="SLO 5" data-ctrl="divider" data-steps="5">
+  <canvas class="ambient"></canvas>
+  <div class="ghost-num">05</div>
+  <header class="hd">
+    <div class="kicker">SLO 5 · Key points</div>
+    <h2 class="title">Reading the indices</h2>
+  </header>
+  <ol class="keys">
+    <li data-step="1"><span class="n">1</span>Hb / Hct → is there anemia?</li>
+    <li data-step="2"><span class="n">2</span>MCV → what size?</li>
+    <li data-step="3"><span class="n">3</span>MCH / MCHC → how much hemoglobin?</li>
+    <li data-step="4"><span class="n">4</span>RDW → how varied in size?</li>
+  </ol>
+  <div class="case-link" data-step="5"><span class="tag red">Our patient</span>Microcytic, hypochromic · ↑ RDW</div>
+  <button class="btn ghost back" data-go="hub">← All objectives</button>
 </section>
 
 <!-- ============================ SLO 6 ============================ -->
@@ -517,7 +610,7 @@
     <div>
       <div class="kicker">Student learning objective 6</div>
       <h2 class="title">Biochemical changes in<br>iron-deficiency anemia</h2>
-      <p class="lead">Iron binding, transport, storage — and the enzyme that needs it last.</p>
+      <p class="lead">From a missing atom to a microcyte.</p>
     </div>
   </div>
 </section>
@@ -529,13 +622,13 @@
   </header>
   <div class="abs" data-ctl style="right:112px;top:100px"></div>
   <div class="viz" data-viz style="left:112px;top:250px;width:1696px;height:640px"></div>
-  <div class="abs capbox" style="left:112px;top:892px;width:1696px;min-height:120px">
-    <div class="cap" data-step="0" data-until="1" data-anim="fade"><p>Dietary iron is absorbed mainly in the <b>duodenum</b>. Non-heme iron is reduced to <b>Fe<sup>2+</sup></b> and enters through <b>DMT1</b>.</p></div>
-    <div class="cap" data-step="1" data-until="2" data-anim="fade"><p>Inside the intestinal cell, iron is either <b>stored as ferritin</b> or <b>exported into the blood through ferroportin</b>.</p></div>
-    <div class="cap" data-step="2" data-until="3" data-anim="fade"><p>In blood, iron binds <b>transferrin</b>, which delivers it to the <b>bone marrow</b> for red cell production, or to tissues for storage as <b>ferritin</b>.</p></div>
-    <div class="cap" data-step="3" data-until="4" data-anim="fade"><p><b>Hepcidin</b> from the liver acts on ferroportin: high hepcidin → less iron enters blood. In iron deficiency, hepcidin <b>decreases</b> → more absorbed and released.</p></div>
-    <div class="cap" data-step="4" data-until="5" data-anim="fade"><p><b>Our patient:</b> prolonged, heavy menstrual bleeding removes iron faster than absorption replaces it — stores are gradually depleted.</p></div>
-    <div class="cap" data-step="5" data-anim="fade"><p>So: <b>absorbed</b> in the intestine → <b>exported</b> by ferroportin → <b>carried</b> by transferrin → <b>stored</b> as ferritin, with <b>hepcidin</b> setting the flow.</p></div>
+  <div class="abs capbox" style="left:112px;top:908px;width:1696px;min-height:90px">
+    <div class="cap" data-step="0" data-until="1" data-anim="fade"><p class="capline">Duodenum · Fe<sup>3+</sup> → Fe<sup>2+</sup> · enters via <b>DMT1</b></p></div>
+    <div class="cap" data-step="1" data-until="2" data-anim="fade"><p class="capline">Stored as <b>ferritin</b> — or exported by <b>ferroportin</b></p></div>
+    <div class="cap" data-step="2" data-until="3" data-anim="fade"><p class="capline"><b>Transferrin</b> → bone marrow · stores</p></div>
+    <div class="cap" data-step="3" data-until="4" data-anim="fade"><p class="capline"><b>Hepcidin</b> ↑ → less iron out · iron deficiency → hepcidin ↓</p></div>
+    <div class="cap" data-step="4" data-until="5" data-anim="fade"><p class="capline"><b>Our patient:</b> loss &gt; absorption → stores depleted</p></div>
+    <div class="cap" data-step="5" data-anim="fade"><p class="capline">Absorb → export → carry → store · <b>hepcidin</b> sets the flow</p></div>
   </div>
   <div class="src">Group B-1 research · StatPearls: Iron Absorption; Hepcidin · schematic</div>
 </section>
@@ -548,7 +641,7 @@
     <h2 class="title">The final step<br>needs iron.</h2>
   </header>
   <div class="abs" data-ctl style="right:112px;top:100px"></div>
-  <div class="split-l" style="top:330px;width:700px" data-path></div>
+  <div class="split-l" style="top:330px;width:660px" data-path></div>
   <div class="abs" data-counter style="right:112px;bottom:96px;text-align:right"></div>
   <div class="drag-hint" style="bottom:34px;right:auto;left:50%;transform:translateX(-50%)">Protoporphyrin IX + Fe²⁺ · drag to rotate</div>
   <div class="src">Group B-1 research · StatPearls: Heme Synthesis</div>
@@ -561,12 +654,29 @@
   </header>
   <div class="abs grid-2" data-tiles style="left:112px;top:270px;width:820px;gap:22px"></div>
   <div class="viz" data-viz style="left:1000px;top:250px;width:820px;height:640px"></div>
-  <div class="verdict" data-step="3" style="font-size:30px"><span class="tag">Meaning</span>Depleted iron stores and reduced iron available for red cell production.</div>
+  <div class="verdict" data-step="3"><span class="tag">Meaning</span>Iron stores depleted → less iron for red cells</div>
   <div class="src">Group B-1 research · StatPearls: Anemia; Iron-Binding Capacity · transferrin model illustrative</div>
 </section>
 
+<section class="slide s-keys" data-title="SLO 6 — Key points" data-section="SLO 6" data-ctrl="divider" data-steps="5">
+  <canvas class="ambient"></canvas>
+  <div class="ghost-num">06</div>
+  <header class="hd">
+    <div class="kicker">SLO 6 · Key points</div>
+    <h2 class="title">The biochemistry</h2>
+  </header>
+  <ol class="keys">
+    <li data-step="1"><span class="n">1</span>DMT1 absorbs · ferroportin exports</li>
+    <li data-step="2"><span class="n">2</span>Transferrin carries · ferritin stores</li>
+    <li data-step="3"><span class="n">3</span>Ferrochelatase inserts Fe²⁺ → heme</li>
+    <li data-step="4"><span class="n">4</span>↓ Iron → ↓ heme → ↓ Hb → microcytes</li>
+  </ol>
+  <div class="case-link" data-step="5"><span class="tag red">Our patient</span>↓ ferritin · ↓ iron · ↑ TIBC · ↓ saturation</div>
+  <button class="btn ghost back" data-go="hub">← All objectives</button>
+</section>
+
 <!-- ============================ CLOSE ============================ -->
-<section class="slide" data-title="Putting it together" data-section="Synthesis" data-ctrl="chain" data-steps="8">
+<section class="slide" id="synthesis" data-title="Putting it together" data-section="Synthesis" data-ctrl="chain" data-steps="8">
   <header class="hd">
     <div class="kicker">Putting it together</div>
     <h2 class="title">One patient. One chain of events.</h2>
@@ -602,10 +712,12 @@
 <div id="chrome">
   <div id="progress"></div>
   <div id="counter">
-    <button id="nav-grid" title="Overview (O)" aria-label="Overview"><svg viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="1" width="6" height="6" rx="1.5"/><rect x="9" y="1" width="6" height="6" rx="1.5"/><rect x="1" y="9" width="6" height="6" rx="1.5"/><rect x="9" y="9" width="6" height="6" rx="1.5"/></svg></button>
+    <span id="sec"></span>
+    <button id="nav-hub" title="Objectives hub (H)" aria-label="Objectives hub"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7.5L8 2.5l6 5"/><path d="M3.8 6.2V13.5h8.4V6.2"/></svg></button>
+    <button id="nav-grid" title="All slides (O)" aria-label="All slides"><svg viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="1" width="6" height="6" rx="1.5"/><rect x="9" y="1" width="6" height="6" rx="1.5"/><rect x="1" y="9" width="6" height="6" rx="1.5"/><rect x="9" y="9" width="6" height="6" rx="1.5"/></svg></button>
     <button id="nav-full" title="Full screen (F)" aria-label="Full screen"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M1.5 5.5v-4h4M14.5 5.5v-4h-4M1.5 10.5v4h4M14.5 10.5v4h-4"/></svg></button>
     <button id="nav-prev" title="Previous (←)" aria-label="Previous"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3L5 8l5 5"/></svg></button>
-    <span id="counter-text">01 / 35</span>
+    <span id="counter-text">01 / 41</span>
     <button id="nav-next" title="Next (→)" aria-label="Next"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3l5 5-5 5"/></svg></button>
   </div>
 </div>
@@ -616,12 +728,14 @@
   <div class="keys">
     <div><kbd>→</kbd><kbd>Space</kbd><kbd>PgDn</kbd></div><span>Next build / slide (works with clickers)</span>
     <div><kbd>←</kbd><kbd>PgUp</kbd></div><span>Previous</span>
+    <div><kbd>H</kbd></div><span>Objectives hub — from any slide</span>
+    <div><kbd>1</kbd>–<kbd>6</kbd></div><span>On the hub: open that objective</span>
     <div><kbd>F</kbd></div><span>Full screen</span>
-    <div><kbd>O</kbd><kbd>Esc</kbd></div><span>Slide overview</span>
+    <div><kbd>O</kbd><kbd>Esc</kbd></div><span>All slides</span>
     <div><kbd>T</kbd></div><span>Light / dark theme (for bright rooms)</span>
     <div><kbd>B</kbd></div><span>Black screen</span>
     <div><kbd>12</kbd><kbd>Enter</kbd></div><span>Jump to slide 12</span>
-    <div><kbd>Home</kbd><kbd>End</kbd></div><span>First / last slide</span>
+    <div><kbd>?</kbd></div><span>This help</span>
   </div>
 </div>
 <div id="blackout"></div>

@@ -12,9 +12,9 @@ export function vials(slide) {
   // ---- three definition columns ----
   const colW = 540;
   const cols = [
-    { t: 'RBC count', q: 'How many?', d: ['Number of red cells in a', 'specific volume of blood.'], c: '#ff375f' },
-    { t: 'Hematocrit (Hct)', q: 'How much space?', d: ['% of blood volume occupied by', 'red cells — e.g. 45% ≈ 45% of volume.'], c: '#ffb340' },
-    { t: 'Hemoglobin (Hb)', q: 'How much oxygen capacity?', d: ['Binds O₂ in the lungs and carries', 'it to the tissues.'], c: '#40c8e0' },
+    { t: 'RBC count', q: 'How many?', d: ['Cells per volume of blood'], c: '#ff375f' },
+    { t: 'Hematocrit (Hct)', q: 'How much space?', d: ['% of blood volume'], c: '#ffb340' },
+    { t: 'Hemoglobin (Hb)', q: 'How much oxygen capacity?', d: ['Carries O₂ to tissues'], c: '#40c8e0' },
   ];
   const colG = cols.map((c, i) => {
     const x = i * (colW + 38);
@@ -29,7 +29,7 @@ export function vials(slide) {
     } else if (i === 1) {
       S('rect', { x: 0, y: 14, width: 460, height: 40, rx: 20, fill: '#ffe08a', opacity: 0.35 }, ig);
       S('rect', { x: 0, y: 14, width: 460 * 0.45, height: 40, rx: 20, fill: '#e5243b' }, ig);
-      S('text', { x: 460 * 0.45 + 14, y: 42, class: 't-sm', text: '45% cells · 55% plasma', style: 'fill:var(--text)' }, ig);
+      S('text', { x: 460 * 0.45 + 14, y: 42, class: 't-sm', text: '45% cells', style: 'fill:var(--text)' }, ig);
     } else {
       for (let k = 0; k < 4; k++) {
         const hx = 40 + k * 120;
@@ -150,22 +150,22 @@ export function film(slide, api) {
     ctx.beginPath();
     ctx.arc(fx, fy, FR + 5, 0, Math.PI * 2);
     ctx.stroke();
-    text(mode === 1 ? 'Her film: microcytic, hypochromic, anisocytosis' : 'Normal film: uniform, normochromic', fx, fy + FR + 52, { size: 22, color: '--text-2', align: 'center' });
+    text(mode === 1 ? 'Microcytic · hypochromic · anisocytosis' : 'Uniform · normochromic', fx, fy + FR + 52, { size: 24, color: '--text-2', align: 'center' });
 
     // right panel: numbers
     const px = 760;
     const R = RANGES;
     text('MCV · AVERAGE SIZE', px, 40, { size: 18, weight: 700, color: '--text-3' });
     text(mode === 1 ? `${CASE.mcv} fL` : `${R.mcv.lo}–${R.mcv.hi} fL`, px, 112, { size: 72, weight: 760, color: mode === 1 ? '--blue' : '--text' });
-    text(mode === 1 ? '↓ smaller than normal' : 'reference interval', px, 152, { size: 22, color: '--text-3' });
+    text(mode === 1 ? '↓ smaller' : 'reference', px, 152, { size: 22, color: '--text-3' });
     const px2 = 1250;
     text('RDW · VARIATION IN SIZE', px2, 40, { size: 18, weight: 700, color: '--text-3' });
     text(mode === 1 ? `${CASE.rdw}%` : `${R.rdw.lo}–${R.rdw.hi}%`, px2, 112, { size: 72, weight: 760, color: mode === 1 ? '--amber' : '--text' });
-    text(mode === 1 ? '↑ sizes differ (anisocytosis)' : 'reference interval', px2, 152, { size: 22, color: '--text-3' });
+    text(mode === 1 ? '↑ anisocytosis' : 'reference', px2, 152, { size: 22, color: '--text-3' });
 
     // size ladder: same cells, sorted smallest → largest
     const ly = 400;
-    text('THE SAME CELLS, LINED UP BY SIZE', px, ly - 110, { size: 18, weight: 700, color: '--text-3' });
+    text('SAME CELLS, SORTED BY SIZE', px, ly - 110, { size: 18, weight: 700, color: '--text-3' });
     const sorted = order(mix > 0.5 ? 'rH' : 'rN');
     const span = w - px - 20;
     const n = sorted.length;
@@ -191,8 +191,7 @@ export function film(slide, api) {
       text('smallest', px + 14, ly + 92, { size: 20, color: '--text-3' });
       text('largest', w - 34, ly + 92, { size: 20, color: '--text-3', align: 'right' });
       const spread = ((maxR - minR) / (sum / n)) * 100;
-      text(mode === 1 ? 'Wide spread of sizes → high RDW' : 'Narrow spread of sizes → normal RDW', px, ly + 160, { size: 30, weight: 700, color: mode === 1 ? '--amber' : '--green' });
-      text('MCV tells us how big the cells are on average; RDW tells us how different their sizes are.', px, ly + 204, { size: 22, color: '--text-2' });
+      text(mode === 1 ? 'Wide spread → high RDW' : 'Narrow spread → normal RDW', px, ly + 160, { size: 34, weight: 700, color: mode === 1 ? '--amber' : '--green' });
       ctx.globalAlpha = 1;
     }
   }

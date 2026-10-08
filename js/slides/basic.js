@@ -61,15 +61,10 @@ export function caseSlide(slide, api) {
 
 // ------------------------------------------------------------- roadmap ----
 export function road(slide, api) {
-  slide.querySelectorAll('[data-go]').forEach((b) => {
-    b.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const target = document.getElementById(b.dataset.go);
-      const i = api.slides.indexOf(target);
-      if (i >= 0) api.go(i, 0);
-    });
-  });
-  return {};
+  const tiles = [...slide.querySelectorAll('.stop[data-n]')];
+  // tick objectives that have already been presented (reached their key-points slide)
+  const mark = () => tiles.forEach((t) => t.classList.toggle('done', api.visited.has(t.dataset.n)));
+  return { enter: mark, step: mark };
 }
 
 // ------------------------------------------------------- divider ambient ----

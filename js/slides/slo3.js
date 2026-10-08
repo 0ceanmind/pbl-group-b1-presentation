@@ -518,16 +518,16 @@ export function liverRole(slide) {
   tag(0, 18, 'IRON', '#ffb340');
   tag(0, 362, 'PIGMENT', '#ffd60a');
   const y1 = 40, h1 = 140;
-  const a = box(colX[0], y1, h1, 'Old red cell', 'Hemoglobin is released\nand phagocytized', '#ff375f');
-  const b = box(colX[1], y1, h1, 'Macrophages', 'Kupffer cells (liver),\nspleen, bone marrow', '#d9a3c9');
-  const c = box(colX[2], y1, h1, 'Iron + transferrin', 'Iron is released into\nblood, bound to transferrin', '#40c8e0');
-  const d1 = box(colX[3], 0, 118, 'Bone marrow', 'New red blood cells', '#ff375f');
+  const a = box(colX[0], y1, h1, 'Old red cell', 'Phagocytosed', '#ff375f');
+  const b = box(colX[1], y1, h1, 'Macrophages', 'Kupffer · spleen · marrow', '#d9a3c9');
+  const c = box(colX[2], y1, h1, 'Iron + transferrin', 'Carried in blood', '#40c8e0');
+  const d1 = box(colX[3], 0, 118, 'Bone marrow', 'New red cells', '#ff375f');
   const d2 = box(colX[3], 134, 118, 'Liver', 'Stored as ferritin', '#ffb340');
   const y2 = 384, h2 = 150;
-  const e = box(colX[0], y2, h2, 'Porphyrin', 'The heme ring, after\nits iron is removed', '#ffd60a');
-  const f = box(colX[1], y2, h2, 'Bilirubin (unconjugated)', 'Travels in blood\nbound to albumin', '#ffd60a');
-  const g = box(colX[2], y2, h2, 'Liver conjugates it', 'UDP-glucuronosyltransferase\n→ more water-soluble', '#30d158');
-  const hh = box(colX[3], y2, h2, 'Bile', 'Conjugated bilirubin\nis secreted', '#30d158');
+  const e = box(colX[0], y2, h2, 'Porphyrin', 'From heme', '#ffd60a');
+  const f = box(colX[1], y2, h2, 'Bilirubin', 'Unconjugated · on albumin', '#ffd60a');
+  const g = box(colX[2], y2, h2, 'Liver conjugates', 'UDP-glucuronosyltransferase', '#30d158');
+  const hh = box(colX[3], y2, h2, 'Bile', 'Water-soluble · secreted', '#30d158');
 
   const P = (dd) => S('path', { d: dd, fill: 'none', stroke: 'var(--line-2)', 'stroke-width': 2, 'stroke-dasharray': '6 8', opacity: 0 }, svg);
   const conn = [
@@ -607,7 +607,7 @@ export function balance(slide) {
   const yH = 120 + 2 * 110;
   S('text', { x: rx0, y: yH + 26, class: 't-sm', text: 'Her heavy, prolonged bleeding', style: 'fill:var(--text)' }, gR);
   const her = S('rect', { x: rx0, y: yH + 40, width: 0, height: 40, rx: 20, fill: 'none', stroke: '#ff375f', 'stroke-width': 3, 'stroke-dasharray': '10 8' }, gR);
-  const herT = S('text', { x: rx0, y: yH + 120, class: 't-sm', text: 'Above the average — not quantified in the case', style: 'fill:var(--text-3)' }, gR);
+  const herT = S('text', { x: rx0, y: yH + 120, class: 't-sm', text: 'Above average · not quantified', style: 'fill:var(--text-3)' }, gR);
   herT.setAttribute('opacity', 0);
 
   function setStep(s) {

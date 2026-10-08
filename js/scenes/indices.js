@@ -53,9 +53,9 @@ export default function indices(slide, api) {
   // ------------------------------------------------------------ index cards
   const cardsHost = slide.querySelector('[data-cards]');
   const defs = [
-    { key: 'mcv', name: 'MCV', full: 'Mean corpuscular volume', what: 'Average <b>size</b> of the red cell', verdict: 'Microcytic', unit: 'fL', c: 'var(--blue)' },
-    { key: 'mch', name: 'MCH', full: 'Mean corpuscular hemoglobin', what: 'Average <b>amount</b> of hemoglobin per cell', verdict: 'Less Hb per cell', unit: 'pg', c: 'var(--pink)' },
-    { key: 'mchc', name: 'MCHC', full: 'Mean corpuscular Hb concentration', what: 'Average <b>concentration</b> of Hb inside the cell', verdict: 'Hypochromic', unit: 'g/dL', c: 'var(--amber)' },
+    { key: 'mcv', name: 'MCV', full: 'Mean corpuscular volume', what: 'Size', verdict: 'Microcytic', unit: 'fL', c: 'var(--blue)' },
+    { key: 'mch', name: 'MCH', full: 'Mean corpuscular hemoglobin', what: 'Hb per cell', verdict: 'Less hemoglobin', unit: 'pg', c: 'var(--pink)' },
+    { key: 'mchc', name: 'MCHC', full: 'Mean corpuscular Hb concentration', what: 'Hb concentration', verdict: 'Hypochromic', unit: 'g/dL', c: 'var(--amber)' },
   ];
   const cards = defs.map((d, i) => {
     const c = H('div', { class: 'card', style: `padding:26px 30px;transition:opacity .6s, border-color .6s, background .6s, transform .8s var(--ease)` }, cardsHost);
@@ -65,7 +65,7 @@ export default function indices(slide, api) {
         <div style="text-align:right"><div class="num" style="font-size:48px;font-weight:760;letter-spacing:-.03em">${CASE[d.key]}<span style="font-size:22px;color:var(--text-3);font-weight:550"> ${d.unit}</span> <span class="down">↓</span></div>
         <div class="caption num" style="font-size:18px">ref ${RANGES[d.key].lo}–${RANGES[d.key].hi} ${d.unit}</div></div>
       </div>
-      <p style="font-size:23px;margin-top:14px">${d.what} → <b style="color:${d.c}">${d.verdict}</b></p>`;
+      <p style="font-size:27px;margin-top:14px;color:var(--text)">${d.what} → <b style="color:${d.c}">${d.verdict}</b></p>`;
     return c;
   });
 

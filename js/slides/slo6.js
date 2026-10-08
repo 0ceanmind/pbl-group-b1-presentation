@@ -131,14 +131,14 @@ export function ironpath(slide) {
 export function ironstudies(slide) {
   const tiles = slide.querySelector('[data-tiles]');
   const T = [
-    { k: 'Ferritin', a: '↓', m: 'Iron stores are depleted', c: 'var(--blue)' },
-    { k: 'Serum iron', a: '↓', m: 'Less iron circulating', c: 'var(--blue)' },
-    { k: 'TIBC', a: '↑', m: 'More free iron-binding capacity', c: 'var(--amber)' },
-    { k: 'Transferrin saturation', a: '↓', m: 'Fewer transferrin sites carry iron', c: 'var(--blue)' },
+    { k: 'Ferritin', a: '↓', m: 'Stores depleted', c: 'var(--blue)' },
+    { k: 'Serum iron', a: '↓', m: 'Less circulating iron', c: 'var(--blue)' },
+    { k: 'TIBC', a: '↑', m: 'More free binding sites', c: 'var(--amber)' },
+    { k: 'Transferrin saturation', a: '↓', m: 'Fewer sites filled', c: 'var(--blue)' },
   ];
   T.forEach((t, i) => {
     const el = H('div', { class: 'card', 'data-step': 1, style: `transition-delay:${i * 0.08}s;min-height:200px` }, tiles);
-    el.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:flex-start"><h3 style="font-size:32px;max-width:280px">${t.k}</h3><span style="font-size:64px;font-weight:800;line-height:.9;color:${t.c}">${t.a}</span></div><p style="margin-top:14px">${t.m}</p>`;
+    el.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:flex-start"><h3 style="font-size:32px;max-width:280px">${t.k}</h3><span style="font-size:64px;font-weight:800;line-height:.9;color:${t.c}">${t.a}</span></div><p style="margin-top:14px;font-size:28px;color:var(--text)">${t.m}</p>`;
   });
 
   const host = slide.querySelector('[data-viz]');
@@ -202,14 +202,14 @@ export function ironstudies(slide) {
 export function chain(slide) {
   const host = slide.querySelector('[data-chain]');
   const nodes = [
-    { slo: 'The case', t: 'Heavy, prolonged menstrual bleeding', p: 'For several months; diet with limited iron-rich foods.' },
-    { slo: 'SLO 6', t: 'Iron loss exceeds absorption', p: 'Blood loss means iron loss.' },
-    { slo: 'SLO 6', t: 'Iron stores depleted', p: '↓ ferritin · ↓ serum iron · ↑ TIBC · ↓ saturation' },
-    { slo: 'SLO 3', t: 'Recycling can’t compensate', p: 'Spleen and liver recycle iron, but losses continue.' },
-    { slo: 'SLO 6', t: 'Less Fe²⁺ for heme', p: 'Ferrochelatase lacks iron → ↓ heme → ↓ hemoglobin.' },
+    { slo: 'The case', t: 'Heavy menstrual bleeding', p: 'Months · low-iron diet' },
+    { slo: 'SLO 6', t: 'Iron loss > absorption', p: 'Blood loss = iron loss' },
+    { slo: 'SLO 6', t: 'Stores depleted', p: '↓ ferritin' },
+    { slo: 'SLO 3', t: 'Recycling can’t compensate', p: 'Losses continue' },
+    { slo: 'SLO 6', t: 'Less Fe²⁺ for heme', p: '↓ heme → ↓ Hb' },
     { slo: 'SLO 5', t: 'Small, pale, unequal cells', p: '↓ MCV · ↓ MCH · ↓ MCHC · ↑ RDW' },
-    { slo: 'SLO 1 · 4', t: 'Marrow can’t respond', p: 'Erythropoietin rises, but reticulocytes are only 0.7%.' },
-    { slo: 'The case', t: '↓ Oxygen-carrying capacity', p: 'Fatigue, dizziness, dyspnea, palpitations, pallor, tachycardia.' },
+    { slo: 'SLO 1 · 4', t: 'Marrow can’t respond', p: 'Reticulocytes 0.7%' },
+    { slo: 'The case', t: '↓ Oxygen delivery', p: 'Fatigue · dyspnea · pallor · tachycardia' },
   ];
   const grid = H('div', { class: 'nodes' }, host);
   const els = nodes.map((n, i) => {
